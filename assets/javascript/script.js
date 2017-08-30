@@ -1,4 +1,4 @@
-var now = moment().format("HH:mm:ss"); 
+var now = moment().format("HH:mm:ss a"); 
 $("#headerClock").text("Current Time: " + now);  
 
 var config = {
@@ -22,7 +22,7 @@ $("#submit").on("click", function(event){
 // creating vars for storing input info
     var trainName = $("#train-name").val().trim();
     var destinN = $("#destination").val().trim();
-    var firstTrain = $("#first-train").val().trim();
+    var firstTrain = moment($("#first-train").val().trim(), "HH:mm").format("X");
     var freqCy = $("#frequency").val().trim();
 
 // Console log each of the user inputs to confirm we are receiving them
@@ -65,18 +65,17 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     console.log(freqCy);
 // Prettify the arrival time
    var newArrivalTime = moment.unix(firstTrain).format("HH:mm");
+  
 //calculate the minutes left to the next arrival
-var newMinutes = moment().diff(moment.unix(firstTrain, "X"), "minutes");
-    console.log(newMinutes);
+   var newMinutes = moment().diff(moment.unix(firstTrain, "X"), "minutes");
+  
+// convert negative numbers to positive
+   newMinutes<0?newMinutes*=-1:'';
+    
+   console.log(newMinutes);
 
-//Calculate the frequency
-//    var frequen = 
     
 //Add each train's data into the table
-   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destinN + "</td><td" + firstTrain + "</td><td>" + freqCy + "</td></tr>");
+   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destinN + "</td><td>" + freqCy + "</td><td>" + newArrivalTime + "</td><td>" + newMinutes + "</td></tr>");
     
 });
-//
-//
-//    var convertedDate = moment(randomDate, randomFormat);
-//console.log(moment(convertedDate).format("hh:mm"));
