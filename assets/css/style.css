@@ -1,0 +1,73 @@
+.jumbotron {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	background-color: #954e12;
+	color: white;
+}
+
+#container {
+	width: 960px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+input, select {
+	display: block;
+	width: 935px;
+	height: 30px;
+	margin: 0 auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #999999;
+}
+
+label {
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 920px;
+	border: none;
+}
+
+#schedule, #train-info {
+	border: 1px solid #0a016d;
+	border-radius: 4px;
+	margin-bottom: 30px;
+}
+
+#addingPtrain, #pSchedule {
+	margin-top: 0;
+	padding-top: 5px;
+	height: 30px;
+	background-color: #0a016d;
+	color: #ffffff;
+	padding-left: 5px;
+}
+
+#submit, #clear {
+	height: 35px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background-color: #0a016d;
+	color: #ffffff;
+}
+th {
+	font-weight: bold;
+}
+
+th, td {
+	padding: 0 80px 0 10px;
+	text-align: center;
+}
+
+.headline-main {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/*reference NYT-search-app html & css files*/
